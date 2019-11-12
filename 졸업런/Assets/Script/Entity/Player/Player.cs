@@ -16,4 +16,14 @@ public class Player : Entity
     {
         
     }
+
+    public void ShootBullet()
+    {
+        GameObject prefab = Resources.Load("playerBullet") as GameObject;
+        GameObject bullet = Instantiate(prefab);
+
+        //GameObject bullet = ObjectManager.instance.GenerateObj("Missile");
+        //bullet.GetComponent<Bullet>().ApplyBattleValue(bv);
+        //bullet.transform.position = transform.position;
+    }
 }
