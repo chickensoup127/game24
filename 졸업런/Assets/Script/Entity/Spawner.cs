@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Spawner : Entity
 {
+    public GameObject _enemy;
     float dt = 0;
     // Start is called before the first frame update
     void Start()
     {
 
-        //GenMonster();
+        GenMonster();
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Spawner : Entity
 
     void GenMonster()
     {
-        GameObject prefab = Resources.Load("Enemy_Boss") as GameObject;
+        GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
         GameObject Enemy = Instantiate(prefab);
         Enemy.transform.position = transform.position;
     }

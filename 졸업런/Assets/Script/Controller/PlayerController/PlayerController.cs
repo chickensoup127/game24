@@ -32,6 +32,11 @@ public class PlayerController : Controller
         {
             moveV.y += 1;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _player.GetComponent<Player>().ShootBullet();
+        }
         moveV = moveV.normalized * _speed * Time.deltaTime;
         _player.GetComponent<Entity>().Move(moveV);
          if (Input.GetKeyDown(KeyCode.Space))
