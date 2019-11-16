@@ -120,8 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!1 &109384968
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +354,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3060848722160420763, guid: 937f7d96225156a46898360d25ec2fcb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 937f7d96225156a46898360d25ec2fcb, type: 3}
->>>>>>> master
 --- !u!1001 &387714673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8377,11 +8374,7 @@ GameObject:
   - component: {fileID: 1060739524}
   m_Layer: 0
   m_Name: Player
-<<<<<<< HEAD
-  m_TagString: Untagged
-=======
   m_TagString: Player
->>>>>>> master
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8459,11 +8452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060739518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -1.9272897, y: -0.010215297, z: -0.10202968}
-=======
   m_LocalPosition: {x: 8.58, y: 0.09, z: -0.10202968}
->>>>>>> master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
