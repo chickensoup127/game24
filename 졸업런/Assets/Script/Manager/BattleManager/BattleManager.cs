@@ -31,16 +31,15 @@ public class BattleManager : Manager
 		 처리해야하는 충돌
 		  - sender: 미사일 , receiver: 적
 		  - sender: 적 , receiver: 플레이어
-		 */
+		
 
-        if ((col._sender.CompareTag("Missile") && col._receiver.CompareTag("Enemy"))
+        if ((col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Enemy"))
             || (col._sender.CompareTag("Enemy") && col._receiver.CompareTag("Player"))
-            || (col._sender.CompareTag("EnemyCurvedMissile") && col._receiver.CompareTag("Player"))
-            || (col._sender.CompareTag("EnemyMissile") && col._receiver.CompareTag("Player")))
+            || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Player")))
         {
             ret = true;
         }
-
+         */
         return ret;
     }
 
