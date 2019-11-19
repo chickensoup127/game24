@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Wall : Entity
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        tag = "Wall";
+        InitBattleValue(0,int.MaxValue);
     }
 
     // Update is called once per frame

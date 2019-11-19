@@ -8,12 +8,13 @@ public class Player_Bullet :Entity
     // Start is called before the first frame update
     void Start()
     {
-    }/*
+    }
+
     public void ApplyBattleValue(BattleValue bv)
     {
-        tag = "Missile";
-        InitBattleValue(bv._hp, bv._atk);
-    }*/
+        tag = "Player_Missile";
+        InitBattleValue(bv._hp, 1);
+    }
 
     // Update is called once per frame
     void Update()

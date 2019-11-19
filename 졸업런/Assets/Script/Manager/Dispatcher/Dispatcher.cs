@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dispatcher : Manager
+public class Dispatcher : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
