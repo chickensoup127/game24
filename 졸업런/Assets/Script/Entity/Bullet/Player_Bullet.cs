@@ -13,7 +13,7 @@ public class Player_Bullet :Entity
     public void ApplyBattleValue(BattleValue bv)
     {
         tag = "Player_Missile";
-        InitBattleValue(bv._hp, bv._atk);
+        InitBattleValue(bv._hp, 1);
     }
 
     // Update is called once per frame

@@ -31,15 +31,22 @@ public class BattleManager : Manager
 		 처리해야하는 충돌
 		  - sender: 미사일 , receiver: 적
 		  - sender: 적 , receiver: 플레이어
-		
-
-        if ((col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Enemy"))
+		  - sender: 적 미사일 , receiver: 플레이어
+                   		
+        */
+        if ((col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Enemy_Boss"))
             || (col._sender.CompareTag("Enemy") && col._receiver.CompareTag("Player"))
-            || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Player")))
+            || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Player"))
+
+            || (col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Wall"))
+            || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Wall"))
+
+
+            )
         {
             ret = true;
         }
-         */
+         
         return ret;
     }
 
@@ -56,24 +63,29 @@ public class BattleManager : Manager
         BattleValue bvSender = sender.GetComponent<Entity>().bv;
         BattleValue bvReceiver = receiver.GetComponent<Entity>().bv;
 
-        bvReceiver._hp -= bvSender._atk;
 
-        if (bvReceiver._hp <= 0)
+        if (receiver.CompareTag("Wall"))
         {
-            if (receiver.CompareTag("Player") && UI_GameOver != null)
-            {
-                UI_GameOver.SetActive(true);
-                // 게임오버 ui를 보여준다.
-            }
-            else
-            {
-                ObjectManager.instance.AddRemoveObj(receiver);
-            }
+            if(sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
+                ObjectManager.instance.AddRemoveObj(sender);
         }
-
-        if (sender.CompareTag("Missile"))
+        else
         {
-            ObjectManager.instance.AddRemoveObj(sender);
+            bvReceiver._hp -= bvSender._atk;
+
+            if (bvReceiver._hp <= 0)
+            {
+                if (receiver.CompareTag("Player") && UI_GameOver != null)
+                {
+                    //UI_GameOver.SetActive(true);
+                    // 게임오버 ui를 보여준다.
+                }
+                else
+                {
+                    ObjectManager.instance.AddRemoveObj(receiver);
+                }
+            }
+
         }
     }
 }
