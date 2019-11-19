@@ -6,8 +6,12 @@ TagManager:
   tags:
   - Enemy_Boss
   - Player_Missile
+  - Wall
+  - Enemy_Missile
+  - Enemy
   - bullet
   - enemy
+
   layers:
   - Default
   - TransparentFX

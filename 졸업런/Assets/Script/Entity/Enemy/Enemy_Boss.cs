@@ -9,6 +9,8 @@ public class Enemy_Boss : Entity
     {
 
         tag = "Enemy_Boss";
+        
+        InitBattleValue(5, 1);
 
     }
     private void OnEnable()

@@ -8,7 +8,7 @@ public class Player : Entity
     void Start()
     {
         tag = "Player";
-
+        InitBattleValue(int.MaxValue, 1);
     }
 
     // Update is called once per frame
@@ -19,11 +19,9 @@ public class Player : Entity
 
     public void ShootBullet()
     {
-        GameObject prefab = Resources.Load("playerBullet") as GameObject;
-        GameObject bullet = Instantiate(prefab);
-
-        //GameObject bullet = ObjectManager.instance.GenerateObj("Missile");
-        //bullet.GetComponent<Bullet>().ApplyBattleValue(bv);
-        //bullet.transform.position = transform.position;
+     
+        GameObject bullet = ObjectManager.instance.GenerateObj("Player_Missile");
+        bullet.GetComponent<Player_Bullet>().ApplyBattleValue(bv);
+        bullet.transform.position = transform.position;
     }
 }

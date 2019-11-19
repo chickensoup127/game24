@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : Entity
+public class Spawner : MonoBehaviour
 {
     public GameObject _enemy;
     float dt = 0;
