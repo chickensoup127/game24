@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    public GameObject _visualObj;
+    private BattleValue _bv = null;
+    public BattleValue bv { get { return _bv; } }
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitBattleValue(float hp, float atk)
     {
-        
+        _bv = new BattleValue(hp, atk);
     }
 
     public void Move(Vector2 moveVector)
