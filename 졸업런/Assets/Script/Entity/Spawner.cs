@@ -22,8 +22,8 @@ public class Spawner : MonoBehaviour
 
     void GenMonster()
     {
-        GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
-        GameObject Enemy = Instantiate(prefab);
+        //GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
+        GameObject Enemy = Instantiate(_enemy);
         Enemy.transform.position = transform.position;
     }
 }
