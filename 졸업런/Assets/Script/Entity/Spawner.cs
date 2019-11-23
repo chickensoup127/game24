@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject _enemy;
-    float dt = 0;
     // Start is called before the first frame update
     void Start()
     {

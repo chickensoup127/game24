@@ -35,11 +35,12 @@ public class BattleManager : Manager
                    		
         */
         if ((col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Enemy_Boss"))
-            || (col._sender.CompareTag("Enemy") && col._receiver.CompareTag("Player"))
+            || (col._sender.CompareTag("Enemy_Boss") && col._receiver.CompareTag("Player"))
             || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Player"))
 
             || (col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Wall"))
             || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Wall"))
+            || (col._sender.CompareTag("Player") && col._receiver.CompareTag("Wall"))
 
 
             )
@@ -64,13 +65,8 @@ public class BattleManager : Manager
         BattleValue bvReceiver = receiver.GetComponent<Entity>().bv;
 
 
-        if (receiver.CompareTag("Wall"))
-        {
-            if(sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
-                ObjectManager.instance.AddRemoveObj(sender);
-        }
-        else
-        {
+
+       
             bvReceiver._hp -= bvSender._atk;
 
             if (bvReceiver._hp <= 0)
@@ -85,7 +81,15 @@ public class BattleManager : Manager
                     ObjectManager.instance.AddRemoveObj(receiver);
                 }
             }
-
+            if(col._sender.CompareTag("Player") && col._receiver.CompareTag("Wall"))
+        {
+            //벽에 부딫혔을때 이동 제한하는내용
         }
+
+        if (sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
+            ObjectManager.instance.AddRemoveObj(sender);
+
+
+
     }
 }

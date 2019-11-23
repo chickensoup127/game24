@@ -11,7 +11,7 @@ TagManager:
   - Enemy
   - bullet
   - enemy
-
+  - Missile
   layers:
   - Default
   - TransparentFX
