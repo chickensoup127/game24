@@ -74,7 +74,7 @@ public class ObjectManager : Manager
     void Start()
     {
         GeneObjPool("Player_Missile", "PlayerMissile", 100);
-        GeneObjPool("Enemy_Missile", "EnemyMissile", 100);
+        GeneObjPool("Enemy_Missile", "EnemyMissile", 1000);
 
     }
 

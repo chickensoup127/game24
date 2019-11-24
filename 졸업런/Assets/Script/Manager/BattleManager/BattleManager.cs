@@ -9,6 +9,8 @@ public class BattleManager : Manager
     // Start is called before the first frame update
     void Start()
     {
+        
+
 
     }
 
@@ -66,28 +68,27 @@ public class BattleManager : Manager
 
 
 
-       
-            bvReceiver._hp -= bvSender._atk;
 
-            if (bvReceiver._hp <= 0)
-            {
-                if (receiver.CompareTag("Player") && UI_GameOver != null)
-                {
-                    //UI_GameOver.SetActive(true);
-                    // 게임오버 ui를 보여준다.
-                }
-                else
-                {
-                    ObjectManager.instance.AddRemoveObj(receiver);
-                }
-            }
-            if(col._sender.CompareTag("Player") && col._receiver.CompareTag("Wall"))
+        bvReceiver._hp -= bvSender._atk;
+
+        if (bvReceiver._hp <= 0)
         {
-            //벽에 부딫혔을때 이동 제한하는내용
+            if (receiver.CompareTag("Player") && UI_GameOver != null)
+            {
+                //UI_GameOver.SetActive(true);
+                // 게임오버 ui를 보여준다.
+            }
+            else
+            {
+                ObjectManager.instance.AddRemoveObj(receiver);
+            }
         }
 
         if (sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
+        {
+            
             ObjectManager.instance.AddRemoveObj(sender);
+        }
 
 
 

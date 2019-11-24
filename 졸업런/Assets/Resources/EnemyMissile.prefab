@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4488695483931559494}
   - component: {fileID: 8030480483692799254}
   - component: {fileID: 8026742899750502492}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: body
   m_TagString: Enemy_Missile
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7055604220423127325}
   - component: {fileID: 8223459878483417923}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyMissile
   m_TagString: Enemy_Missile
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 7055604221074053928}
   - component: {fileID: 7055604221074053934}
   - component: {fileID: 7055604221074053929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: visual_obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
