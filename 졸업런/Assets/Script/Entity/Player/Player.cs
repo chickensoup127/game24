@@ -9,7 +9,7 @@ public class Player : Entity
     void Start()
     {
         tag = "Player";
-        InitBattleValue(int.MaxValue, 1);
+        InitBattleValue(5, 1);
 
 
     }
