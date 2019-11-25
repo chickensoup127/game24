@@ -17,12 +17,20 @@ public class body : MonoBehaviour
     {
         
     }
+    private void LateUpdate()
+    {
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         Collision col = new Collision();
+
         col._sender = _owner;
         col._receiver = collision.gameObject.GetComponent<body>()._owner;
-        CollisionDispatcher.instance.DispatchCollision(col);
+
+       
+
+            CollisionDispatcher.instance.DispatchCollision(col);
     }
 }
