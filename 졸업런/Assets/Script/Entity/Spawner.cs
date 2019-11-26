@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject _enemy;
-    public bool _spawn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +14,11 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_spawn == true)
-
-        {
-            GenMonster();
-        }
-        _spawn = false;
     }
-
+    private void OnEnable()
+    {
+        GenMonster();
+    }
     void GenMonster()
     {
         //GameObject prefab = Resources.Load(_enemy.tag) as GameObject;

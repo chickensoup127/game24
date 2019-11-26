@@ -8,6 +8,8 @@ public class PlayerController : Controller
     public float _speed=2.0f;
     private Camera mainCamera; // 메인 카메라
     private bool check = true;
+    public GameObject UI_Pause;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,12 @@ public class PlayerController : Controller
         }
         moveV = moveV.normalized * _speed * Time.deltaTime;
         _player.GetComponent<Entity>().Move(moveV);
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale= 0;
+            UI_Pause.SetActive(true);
+        }
     }
     IEnumerator WaitForIt()
     {

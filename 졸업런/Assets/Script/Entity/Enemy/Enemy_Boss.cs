@@ -11,7 +11,6 @@ public class Enemy_Boss : Entity
     {
         tag = "Enemy_Boss";
         InitBattleValue(_hp, 1);
-        StartCoroutine("Shoot" + Random.Range(1, 3));
     }
 
     private void OnEnable()

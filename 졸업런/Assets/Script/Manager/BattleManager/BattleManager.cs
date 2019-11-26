@@ -75,6 +75,7 @@ public class BattleManager : Manager
         {
             if (receiver.CompareTag("Player") && UI_GameOver != null)
             {
+
                 
                 UI_GameOver.SetActive(true);
                 // 게임오버 ui를 보여준다.

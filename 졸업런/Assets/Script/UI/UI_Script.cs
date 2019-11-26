@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class UI_GameOver : MonoBehaviour
+
+public class UI_Script : MonoBehaviour
 {
+    public GameObject spawner;
+    public GameObject _owner;
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
+        spawner.SetActive(true);
+        _owner.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         
-    }
-
-    public void BtnClickGameOver()
-    {
-        SceneManager.LoadScene("room3");
-
-        //씬 재시작 로직 실행
     }
 }
