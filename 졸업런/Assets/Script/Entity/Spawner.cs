@@ -19,8 +19,8 @@ public class Spawner : MonoBehaviour
 
         {
             GenMonster();
-            _spawn = false;
         }
+        _spawn = false;
     }
 
     void GenMonster()
