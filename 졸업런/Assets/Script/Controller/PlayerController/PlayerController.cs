@@ -20,6 +20,7 @@ public class PlayerController : Controller
     void Update()
     {
         Vector2 moveV = Vector2.zero;
+        
         if (Input.GetKey(KeyCode.S))
         {
             moveV.y -= 1;
@@ -37,7 +38,7 @@ public class PlayerController : Controller
             moveV.y += 1;
         }
 
-        if (Input.GetMouseButton(0)&&check)
+        if (Input.GetMouseButton(0)&&check&&Time.timeScale==1)
         {
             check = false;
             Vector3 Mouseposition = Input.mousePosition;
