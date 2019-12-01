@@ -1,23 +1,25 @@
-﻿using System.Collections; using System.Collections.Generic; using UnityEngine;  public class AddBullet : MonoBehaviour {          public GameObject bullet;    
+﻿using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI;  public class AddBullet : MonoBehaviour {          public GameObject bullet;    
     public float _speed = 2.0f;     private bool shootstate;     
 
     private Camera mainCamera;     Rigidbody2D rigid;      public float movespeed = 1f;
- 
 
+    public Text thesis;
+    int score = 0;
 
     // Use this for initialization
     void Start () {
 
         tag = "Player";
         shootstate = true;
-        rigid = gameObject.GetComponent<Rigidbody2D>();      
+        rigid = gameObject.GetComponent<Rigidbody2D>();          thesis.text = "" + score;
+
     }       // Update is called once per frame  void Update () {
 
         Shoot();
 
     }
 
-     
+    
     void FixedUpdate()
     {
         Move();
@@ -92,16 +94,24 @@
     }
 
     
-        void OnTriggerEnter(Collider other)
+        void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag == "enemy")
+            if (other.CompareTag("enemy"))
             {
                 Debug.Log("distracted");
                 //집중력감소 추가하기
 
             }
+       
+        if (other.CompareTag("Thesis"))
+        {
+            Debug.Log("thesis");
+            score += 1;
+            Destroy(other.gameObject);
+
+
         }
-    
+    }
 }
 
 
