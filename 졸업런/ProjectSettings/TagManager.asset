@@ -11,7 +11,7 @@ TagManager:
   - Enemy
   - bullet
   - enemy
-
+  - Missile
   layers:
   - Default
   - TransparentFX
@@ -21,10 +21,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - enemy
+  - player_misille
+  - enemy_missile
   - 
   - 
   - 

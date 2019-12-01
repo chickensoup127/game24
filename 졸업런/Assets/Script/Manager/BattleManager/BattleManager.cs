@@ -9,6 +9,8 @@ public class BattleManager : Manager
     // Start is called before the first frame update
     void Start()
     {
+        
+
 
     }
 
@@ -35,11 +37,12 @@ public class BattleManager : Manager
                    		
         */
         if ((col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Enemy_Boss"))
-            || (col._sender.CompareTag("Enemy") && col._receiver.CompareTag("Player"))
+            || (col._sender.CompareTag("Enemy_Boss") && col._receiver.CompareTag("Player"))
             || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Player"))
 
             || (col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Wall"))
             || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Wall"))
+            || (col._sender.CompareTag("Player") && col._receiver.CompareTag("Wall"))
 
 
             )
@@ -64,28 +67,30 @@ public class BattleManager : Manager
         BattleValue bvReceiver = receiver.GetComponent<Entity>().bv;
 
 
-        if (receiver.CompareTag("Wall"))
-        {
-            if(sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
-                ObjectManager.instance.AddRemoveObj(sender);
-        }
-        else
-        {
-            bvReceiver._hp -= bvSender._atk;
 
-            if (bvReceiver._hp <= 0)
+
+        bvReceiver._hp -= bvSender._atk;
+
+        if (bvReceiver._hp <= 0)
+        {
+            if (receiver.CompareTag("Player") && UI_GameOver != null)
             {
-                if (receiver.CompareTag("Player") && UI_GameOver != null)
-                {
-                    //UI_GameOver.SetActive(true);
-                    // 게임오버 ui를 보여준다.
-                }
-                else
-                {
-                    ObjectManager.instance.AddRemoveObj(receiver);
-                }
+                //UI_GameOver.SetActive(true);
+                // 게임오버 ui를 보여준다.
             }
-
+            else
+            {
+                ObjectManager.instance.AddRemoveObj(receiver);
+            }
         }
+
+        if (sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
+        {
+            
+            ObjectManager.instance.AddRemoveObj(sender);
+        }
+
+
+
     }
 }

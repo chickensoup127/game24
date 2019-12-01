@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject _enemy;
-    float dt = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +21,8 @@ public class Spawner : MonoBehaviour
 
     void GenMonster()
     {
-        GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
-        GameObject Enemy = Instantiate(prefab);
+        //GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
+        GameObject Enemy = Instantiate(_enemy);
         Enemy.transform.position = transform.position;
     }
 }

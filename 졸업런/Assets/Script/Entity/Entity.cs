@@ -20,5 +20,6 @@ public class Entity : MonoBehaviour
     public void Move(Vector2 moveVector)
     {
         transform.Translate(moveVector);
+        //transform.FindChild("body").gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector);
     }
 }

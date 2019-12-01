@@ -5,10 +5,13 @@ using UnityEngine;
 public class Player : Entity
 {
     // Start is called before the first frame update
+    
     void Start()
     {
         tag = "Player";
-        InitBattleValue(int.MaxValue, 1);
+        InitBattleValue(5, 1);
+
+
     }
 
     // Update is called once per frame
@@ -16,12 +19,13 @@ public class Player : Entity
     {
         
     }
-
-    public void ShootBullet()
+    public void ShootBullet(Vector3 targetpos)
     {
      
         GameObject bullet = ObjectManager.instance.GenerateObj("Player_Missile");
         bullet.GetComponent<Player_Bullet>().ApplyBattleValue(bv);
         bullet.transform.position = transform.position;
+        bullet.GetComponent<Player_Bullet>()._dir = targetpos - bullet.transform.position;
+
     }
 }
