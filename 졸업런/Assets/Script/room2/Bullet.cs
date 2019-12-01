@@ -3,7 +3,7 @@
 
     // Use this for initialization
 
-    float xpos;     float ypos;     float zpos;     float speed = 0.1f;
+    float xpos;     float ypos;         float speed = 0.1f;
     void Start()
     {
 
@@ -11,7 +11,7 @@
 
     // Update is called once per frame
     void Update()
-    {         transform.position = new Vector3(xpos, ypos, zpos);         ypos += speed;          if(ypos > 10)
+    {         transform.position = new Vector2(xpos, ypos);         xpos += speed;          if(xpos > 10)
         {
             Destroy(gameObject);
         }     }
@@ -20,7 +20,7 @@
     {
         xpos = x;
         ypos = y;
-        zpos = z;
+       
     }
 
     void OnTriggerEnter(Collider other)
@@ -29,6 +29,7 @@
         {
             Debug.Log("kill");
             Destroy(other);
+            Destroy(gameObject);
 
         }
     }
