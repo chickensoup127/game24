@@ -11,22 +11,22 @@
     {
         Vector3 moveVelocity = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetAxisRaw("Vertical")>0)
         {
             moveVelocity = Vector3.up;
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetAxisRaw("Vertical")<0)
         {
             moveVelocity = Vector3.down;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetAxisRaw("Horizontal")>0)
         {
             moveVelocity = Vector3.left;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if ((Input.GetAxisRaw("Horizontal") < 0))
         {
             moveVelocity = Vector3.right;
         }
