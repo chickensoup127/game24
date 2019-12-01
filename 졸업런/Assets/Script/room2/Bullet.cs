@@ -5,15 +5,17 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    Vector3 pos;
-    float speed = 5f;
+    public float speed = 2.0f;
+    public Vector2 _dir;
+    public float Lifetime = Mathf.Infinity;
+   
 
     // Use this for initialization
 
 
     void Start()
     {
-
+        tag = "Bullet";
     }
 
     // Update is called once per frame
@@ -21,9 +23,9 @@ public class Bullet : MonoBehaviour
 
     {
 
-        pos = transform.position;         pos.x += speed*Time.deltaTime;
-        transform.position = pos;
-            Destroy(gameObject, 10);
+        Vector2 moveV = _dir.normalized * Time.deltaTime * speed;
+        transform.Translate(moveV);
+        Destroy(gameObject, 10);
              }
 
     

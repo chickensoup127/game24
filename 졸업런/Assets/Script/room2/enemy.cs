@@ -5,7 +5,10 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public Vector2 speed = new Vector2(10, 10);
-    public Vector2 direction = new Vector2(-1, 0);
+    public Vector2 direction = new Vector2(1, 0);
+
+    float xpos;
+    float ypos;
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
@@ -21,6 +24,12 @@ public class enemy : MonoBehaviour
         movement = new Vector2(
           speed.x * direction.x,
           speed.y * direction.y);
+
+       /* transform.position = new Vector2(xpos, ypos);
+        if (xpos > 32)
+        {
+            Destroy(gameObject);
+        }*/
     }
 
     void FixedUpdate()
