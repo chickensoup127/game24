@@ -45,7 +45,6 @@ public class PlayerController : Controller
             Mouseposition = mainCamera.ScreenToWorldPoint(Mouseposition);
             _player.GetComponent<Player>().ShootBullet(Mouseposition);
             StartCoroutine(WaitForIt());
-
         }
         moveV = moveV.normalized * _speed * Time.deltaTime;
         _player.GetComponent<Entity>().Move(moveV);

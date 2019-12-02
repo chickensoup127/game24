@@ -23,7 +23,7 @@ public class Enemy_Boss : Entity
         if (check)
         {
             check = false;
-            StartCoroutine("Shoot" + Random.Range(1, 3));
+            StartCoroutine("Shoot" + Random.Range(1, 4));
             StartCoroutine(WaitForIt());
         }
 
