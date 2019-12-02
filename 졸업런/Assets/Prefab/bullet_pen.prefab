@@ -95,6 +95,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fd59bc14d0fdb47be4e6bd4ed822c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _visualObj: {fileID: 2335937234954417694}
+  _speed: 2
+  _owner: {fileID: 0}
+  _dir: {x: 0, y: 0}
+  Lifetime: Infinity
+  speed: 2
 --- !u!50 &2709612600045633228
 Rigidbody2D:
   serializedVersion: 4

@@ -3,20 +3,25 @@
 
     private Camera mainCamera;     Rigidbody2D rigid;      public float movespeed = 1f;
 
+  
     public Text thesis;
     int score = 0;
-
+    public Text Distraction;
+    int concen = 10;
     // Use this for initialization
+
+ 
     void Start () {
 
         tag = "Player";
         shootstate = true;
         rigid = gameObject.GetComponent<Rigidbody2D>();          thesis.text = "" + score;
+        Distraction.text = ":" + concen;
 
     }       // Update is called once per frame  void Update () {
 
         Shoot();
-
+         
     }
 
     
@@ -99,14 +104,14 @@
             if (other.CompareTag("enemy"))
             {
                 Debug.Log("distracted");
-                //집중력감소 추가하기
+                
 
             }
        
         if (other.CompareTag("Thesis"))
         {
             Debug.Log("thesis");
-            score += 1;
+            gameManager.instance.AddScore(1);
             Destroy(other.gameObject);
 
 

@@ -7,8 +7,7 @@ public class enemy : MonoBehaviour
     public Vector2 speed = new Vector2(10, 10);
     public Vector2 direction = new Vector2(1, 0);
 
-    float xpos;
-    float ypos;
+ 
 
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
@@ -40,7 +39,7 @@ public class enemy : MonoBehaviour
         rigidbodyComponent.velocity = movement;
     }
 
-        void OnTriggerEnter(Collider other)
+        void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "bullet")
         {
@@ -48,5 +47,7 @@ public class enemy : MonoBehaviour
             Destroy(gameObject);
 
         }
+
+        
     }
 }

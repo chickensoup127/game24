@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : root_Bullet
 {
 
-    public float speed = 2.0f;
-    public Vector2 _dir;
-    public float Lifetime = Mathf.Infinity;
-   
+    
+
+    
 
     // Use this for initialization
 
@@ -23,10 +22,8 @@ public class Bullet : MonoBehaviour
 
     {
 
-        Vector2 moveV = _dir.normalized * Time.deltaTime * speed;
-        transform.Translate(moveV);
-        Destroy(gameObject, 10);
-             }
+        Vector2 moveV = _dir.normalized * Time.deltaTime * _speed;
+        Move(moveV);     }
 
     
 
