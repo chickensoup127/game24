@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class enemy : MonoBehaviour
+public class item : MonoBehaviour
 {
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -13,16 +15,8 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject, 10);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "bullet")
-        {
-            Debug.Log("kill");
-            Destroy(gameObject);
-
-        }
-    }
+   
 }
