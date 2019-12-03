@@ -8957,6 +8957,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &957162877 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4844167032948462584, guid: 3fe10f83daf07be40b5e3d9a1bdfb5fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1417640326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961066150
 GameObject:
   m_ObjectHideFlags: 0
@@ -11315,6 +11321,7 @@ MonoBehaviour:
   _player: {fileID: 2081891934}
   _speed: 8
   UI_Pause: {fileID: 1278854291}
+  animator: {fileID: 957162877}
 --- !u!4 &1933125298
 Transform:
   m_ObjectHideFlags: 0
