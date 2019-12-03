@@ -9,7 +9,7 @@ public class PlayerController : Controller
     private Camera mainCamera; // 메인 카메라
     private bool check = true;
     public GameObject UI_Pause;
-
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,7 @@ public class PlayerController : Controller
     void Update()
     {
         Vector2 moveV = Vector2.zero;
-        
+
         if (Input.GetKey(KeyCode.S))
         {
             moveV.y -= 1;
@@ -28,6 +28,7 @@ public class PlayerController : Controller
         if (Input.GetKey(KeyCode.A))
         {
             moveV.x -= 1;
+
         }
         if (Input.GetKey(KeyCode.D))
         {
