@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +10,23 @@ public class GameManager : MonoBehaviour
     public Sprite[] Number;
 
     public Image TimeBar;//타임바
+    
+    public GameObject EndPanel;//엔드판넬 변수
+
+    public GameObject SuccessPanel;//성공판넬 변수
+
+    public void Restart_Btu()
+    {
+        DataManager.Instance.score = 0;
+        DataManager.Instance.PlayerDie = false;
+        DataManager.Instance.Success = false;
+        DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
+
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene("room1");
+    }
+    
 
     private void Update()
     {
@@ -35,7 +52,21 @@ public class GameManager : MonoBehaviour
             if (DataManager.Instance.playTimeCurrent < 0)
             {
                 DataManager.Instance.PlayerDie = true;//배경끄기
+                Time.timeScale = 0;
             }
+
         }
+        
+        if (DataManager.Instance.PlayerDie == true)//플레이어 죽으면 엔드판넬 켜기
+        {
+            EndPanel.SetActive(true);
+        }
+
+        if (DataManager.Instance.Success == true)//성공하면 성공판넬 켜기
+        {
+            SuccessPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
+        
     }
 }

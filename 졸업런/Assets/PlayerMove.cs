@@ -34,6 +34,11 @@ public class PlayerMove : MonoBehaviour
         {
             jumpCount = 0;
         }
+
+        if(collision.gameObject.tag.CompareTo("Block")==0)
+        {
+            DataManager.Instance.playTimeCurrent -= 1f;
+        }
     }
 
     //키보드입력
