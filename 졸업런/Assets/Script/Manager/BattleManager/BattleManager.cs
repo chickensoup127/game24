@@ -82,8 +82,9 @@ public class BattleManager : Manager
                 // 게임오버 ui를 보여준다.
 
             }
-            else if(receiver.CompareTag("Enemy_Boss") && UI_GameOver != null)
+            else if(receiver.CompareTag("Enemy_Boss") && UI_Ending!= null)
             {
+                ObjectManager.instance.AddRemoveObj(receiver);
                 UI_Ending.SetActive(true);
             }
             else

@@ -19,13 +19,9 @@ public class PlayerController : Controller
         rigid = _player.GetComponent<Rigidbody2D>();
         
     }
-
-    void Update()
-    {
-        
-    }
+    
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
         Vector3 moveV = Vector3.zero;

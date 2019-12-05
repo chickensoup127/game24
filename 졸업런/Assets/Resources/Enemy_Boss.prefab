@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visualObj: {fileID: 7364768109067625351, guid: 2fa5f18695d6c234b8a67968c7810930,
     type: 3}
-  _hp: 10
+  _hp: 5
 --- !u!50 &2402211569978897703
 Rigidbody2D:
   serializedVersion: 4
@@ -117,6 +117,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3898139269374175598}
     m_Modifications:
+    - target: {fileID: 7364768109067625351, guid: 2fa5f18695d6c234b8a67968c7810930,
+        type: 3}
+      propertyPath: m_Name
+      value: Cube (Missing Prefab)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364768109067625351, guid: 2fa5f18695d6c234b8a67968c7810930,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 847126970263207026, guid: 2fa5f18695d6c234b8a67968c7810930,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,16 +181,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364768109067625351, guid: 2fa5f18695d6c234b8a67968c7810930,
-        type: 3}
-      propertyPath: m_Name
-      value: Cube (Missing Prefab)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364768109067625351, guid: 2fa5f18695d6c234b8a67968c7810930,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8657581590962890071, guid: 2fa5f18695d6c234b8a67968c7810930,
         type: 3}
