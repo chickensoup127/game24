@@ -23,45 +23,38 @@ public class PlayerController : Controller
     // Update is called once per frame
     void Update()
     {
-
+        animator.SetInteger("Is_Move", 0);
         Vector3 moveV = Vector3.zero;
         SpriteRenderer renderer = _player.GetComponentInChildren<SpriteRenderer>();
-
-        if (Input.GetKey(KeyCode.S))
+      
+        if (Input.GetAxisRaw("Vertical") > 0)
         {
-            //Vector3 temp= Vector3.down;
-            //moveV += temp;
-    
-            moveV.y -= 1;
-            animator.SetInteger("Is_Move",3);
+            moveV = Vector3.up;
+           // Debug.Log("up");
         }
-        if (Input.GetKey(KeyCode.A))
+
+        if (Input.GetAxisRaw("Vertical") < 0)
         {
-            //Vector3 temp = Vector3.left;
-            //moveV += temp;
-            moveV.x -= 1;
+            moveV = Vector3.down;
+            //Debug.Log("down");
+        }
+
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            moveV= Vector3.left;
+            //Debug.Log("left");
+
             renderer.flipX = true;
-            animator.SetInteger("Is_Move", 1);
-
         }
-        if (Input.GetKey(KeyCode.D))
+
+        if ((Input.GetAxisRaw("Horizontal") > 0))
         {
-            //Vector3 temp = Vector3.right;
-            //moveV += temp ;
-            moveV.x += 1;
+            moveV = Vector3.right;
+            animator.SetInteger("Is_Move", 1);
+            //Debug.Log("right");
 
             renderer.flipX = false;
-            animator.SetInteger("Is_Move", 1);
-
         }
-        if (Input.GetKey(KeyCode.W))
-        {
-            //Vector3 temp = Vector3.up;
-            //moveV += temp;
-            moveV.y += 1;
-            animator.SetInteger("Is_Move", 2);
-        }
-        
 
         if (Input.GetMouseButton(0)&&check&&Time.timeScale==1)
         {
@@ -79,8 +72,6 @@ public class PlayerController : Controller
             UI_Pause.SetActive(true);
         }
 
-        //rigid.AddForce(moveV, ForceMode2D.Impulse);
-        //transform.position += moveV*1.0f*Time.deltaTime;
         moveV = moveV.normalized * _speed * Time.deltaTime;
         _player.GetComponent<Entity>().Move(moveV);
 
