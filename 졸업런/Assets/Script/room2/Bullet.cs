@@ -14,7 +14,6 @@ public class Bullet : root_Bullet
 
     void Start()
     {
-        tag = "Bullet";
     }
 
     // Update is called once per frame
@@ -25,16 +24,7 @@ public class Bullet : root_Bullet
         Vector2 moveV = _dir.normalized * Time.deltaTime * _speed;
         Move(moveV);     }
 
-    
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "enemy")
-        {
-            Debug.Log("kill");
-            Destroy(other);
-            Destroy(gameObject);
 
-        }
-    }
+  
 }

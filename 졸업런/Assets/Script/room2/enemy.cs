@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public Vector2 speed = new Vector2(10, 10);
+    public Vector2 speed = new Vector2(0.1f, 0.1f );
     public Vector2 direction = new Vector2(1, 0);
 
  
@@ -21,14 +21,9 @@ public class enemy : MonoBehaviour
     void Update()
     {
         movement = new Vector2(
-          speed.x * direction.x,
-          speed.y * direction.y);
+          speed.x * direction.x* 0.1f,
+          speed.y * direction.y*0.1f);
 
-       /* transform.position = new Vector2(xpos, ypos);
-        if (xpos > 32)
-        {
-            Destroy(gameObject);
-        }*/
     }
 
     void FixedUpdate()
@@ -45,6 +40,7 @@ public class enemy : MonoBehaviour
         {
             Debug.Log("kill");
             Destroy(gameObject);
+            Destroy(other);
 
         }
 
