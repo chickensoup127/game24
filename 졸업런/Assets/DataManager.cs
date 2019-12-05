@@ -6,6 +6,9 @@ public class DataManager : MonoBehaviour
 {
     static DataManager instance;
     public bool PlayerDie = false;
+    //플레이타임
+    public float playTimeCurrent = 10f;
+    public float playTimeMax = 10f;
     public static DataManager Instance
     {
         get

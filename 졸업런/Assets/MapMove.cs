@@ -8,6 +8,9 @@ public class MapMove : MonoBehaviour
 
     private void Update()//맵스피드만큼 -x축으로 이동
     {
-        transform.Translate(-mapSpeed * Time.deltaTime, 0, 0);
+        if (!DataManager.Instance.PlayerDie)
+        {
+            transform.Translate(-mapSpeed * Time.deltaTime, 0, 0);
+        }
     }
 }
