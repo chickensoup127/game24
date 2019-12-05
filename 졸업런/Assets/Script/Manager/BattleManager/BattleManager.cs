@@ -5,6 +5,7 @@ using UnityEngine;
 public class BattleManager : Manager
 {
     public GameObject UI_GameOver;
+    public GameObject UI_Ending;
     List<Collision> _collisionLst = new List<Collision>();
     // Start is called before the first frame update
     void Start()
@@ -81,10 +82,16 @@ public class BattleManager : Manager
                 // 게임오버 ui를 보여준다.
 
             }
+            else if(receiver.CompareTag("Enemy_Boss") && UI_GameOver != null)
+            {
+                UI_Ending.SetActive(true);
+            }
             else
             {
                 ObjectManager.instance.AddRemoveObj(receiver);
             }
+
+            
         }
 
         if (sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))

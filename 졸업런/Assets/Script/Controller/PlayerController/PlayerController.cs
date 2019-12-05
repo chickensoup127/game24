@@ -75,16 +75,19 @@ public class PlayerController : Controller
             _player.GetComponent<Player>().ShootBullet(Mouseposition);
             StartCoroutine(WaitForIt());
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            UI_Pause.SetActive(true);
+        }
+
         //rigid.AddForce(moveV, ForceMode2D.Impulse);
         //transform.position += moveV*1.0f*Time.deltaTime;
         moveV = moveV.normalized * _speed * Time.deltaTime;
         _player.GetComponent<Entity>().Move(moveV);
 
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale= 0;
-            UI_Pause.SetActive(true);
-        }
     }
     IEnumerator WaitForIt()
     {
