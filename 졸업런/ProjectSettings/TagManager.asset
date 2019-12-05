@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy_Boss
+  - Player_Missile
+  - Wall
+  - Enemy_Missile
+  - Enemy
+  - bullet
+  - enemy
+  - Missile
+  - Thesis
   layers:
   - Default
   - TransparentFX
@@ -13,10 +22,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - player
+  - enemy
+  - player_misille
+  - enemy_missile
   - 
   - 
   - 
