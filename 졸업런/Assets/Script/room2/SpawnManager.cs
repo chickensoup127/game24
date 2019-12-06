@@ -47,17 +47,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    /*void SpawnEnemy3()
-    {
-        float randomX = Random.Range(-32f, 32f); //적이 나타날 X좌표를 랜덤으로 생성해 줍니다.
-        float randomY = Random.Range(5f, -0.5f);
-        if (enableSpawn)
-        {
-            GameObject enemy1 = (GameObject)Instantiate(Enemy1, new Vector3(randomX, randomY, 0f), Quaternion.identity); //랜덤한 위치와, 화면 제일 위에서 Enemy를 하나 생성해줍니다.
-            GameObject enemy2 = (GameObject)Instantiate(Enemy2, new Vector3(randomX, randomY, 0f), Quaternion.identity);
-            GameObject enemy3 = (GameObject)Instantiate(Enemy3, new Vector3(randomX, randomY, 0f), Quaternion.identity);
-        }
-    }*/
+   
     void Start()
     {
        

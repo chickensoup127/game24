@@ -6,15 +6,15 @@ public class enemy : MonoBehaviour
 {
     public Vector2 speed = new Vector2(5f, 5f );
     public Vector2 direction = new Vector2(1, 0);
-
- 
-
+    
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
     // Start is called before the first frame update
     void Start()
     {
         
+
+
     }
 
     // Update is called once per frame
@@ -23,6 +23,8 @@ public class enemy : MonoBehaviour
         movement = new Vector2(
           speed.x * direction.x,
           speed.y * direction.y);
+
+        
 
     }
 
@@ -42,6 +44,13 @@ public class enemy : MonoBehaviour
             Destroy(gameObject);
             Destroy(other);
 
+        }
+
+        if (other.tag == "Player")
+        {
+            Debug.Log("distracted");
+            gameOn.distractionCurrent -= 1;
+            Destroy(gameObject);
         }
 
         

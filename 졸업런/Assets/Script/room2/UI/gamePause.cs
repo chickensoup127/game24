@@ -6,7 +6,6 @@ public class gamePause : MonoBehaviour {
 
     // Use this for initialization
 
-    bool isPause = false;
     public Canvas paused;
   
 
@@ -22,7 +21,6 @@ public class gamePause : MonoBehaviour {
         {
 
             Time.timeScale = 0;
-            isPause = true;
             paused.enabled = true;
 
 
@@ -37,7 +35,6 @@ public class gamePause : MonoBehaviour {
     public void Resume()
     {
         Time.timeScale = 1;
-        isPause = false;
         paused.enabled = false;
     }
 

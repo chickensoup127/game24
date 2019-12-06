@@ -1,57 +1,61 @@
-﻿using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI;  public class AddBullet : MonoBehaviour {
+﻿using System.Collections; using System.Collections.Generic; using UnityEngine;   public class AddBullet : MonoBehaviour {
 
      
-    public float _speed = 2.0f;     public float bulletVelocity=10f;       private bool shootstate;     
+    public float _speed = 2.0f;     public float bulletVelocity=10f;
+    private bool FireState;     public float FireDelay;     
 
     private Camera mainCamera;     Rigidbody2D rigid;     public GameObject player;      public float movespeed = 1f;
     public GameObject bullet1;
+    
   
-    public Text thesis;
-    int score = 0;
-    public Text Distraction;
-    int concen = 10;
 
-    public Canvas start;
-    public Canvas fail;
-    public Canvas success;
     // Use this for initialization
 
-    Vector3 shootDirection;
+   
 
 
     void Start () {
 
         tag = "Player";
-        shootstate = true;
-        rigid = gameObject.GetComponent<Rigidbody2D>();          thesis.text = "" + score;
-        Distraction.text = ":" + concen;
+        FireState = true;
+        rigid = gameObject.GetComponent<Rigidbody2D>();          
+        
+        
 
     }       // Update is called once per frame  void Update () {
 
-        SpriteRenderer renderer = player.GetComponentInChildren<SpriteRenderer>();
-        tag = "Bullet";
-        if (Input.GetButtonDown("Fire1"))
+        if (FireState)
         {
-            Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Vector2 direction = (Vector2)((worldMousePos - transform.position));
-            direction.Normalize();
+                Vector2 direction = (Vector2)((worldMousePos - transform.position));
+                direction.Normalize();
+                StartCoroutine(ShootCtrl());
 
-            // Creates the bullet locally
-            GameObject bullet = (GameObject)Instantiate(
-                                    bullet1,
-                                    transform.position + (Vector3)(direction * 0.5f),
-                                    Quaternion.identity);
+                // Creates the bullet locally
+                GameObject bullet = (GameObject)Instantiate(
+                                        bullet1,
+                                        transform.position + (Vector3)(direction * 0.5f),
+                                        Quaternion.identity);
 
-            // Adds velocity to the bullet
-            bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
+                // Adds velocity to the bullet
+                bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
+            }
         }
 
-        UI();
+        
 
     }
 
-  
+  IEnumerator ShootCtrl()
+    {
+        FireState = false;
+        yield return new WaitForSeconds(FireDelay);
+        FireState = true;
+
+    }
 
     void FixedUpdate()
     {
@@ -106,27 +110,21 @@
     
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("enemy"))
-            {
-                Debug.Log("distracted");
-                
-
-            }
+            
        
         if (other.CompareTag("Thesis"))
         {
             Debug.Log("thesis");
+           
             Destroy(other.gameObject);
+            gameOn.thesis += 1;
 
 
         }
     }
 
 
-    void UI()
-    {
-        
-    }
+   
 
 }
 

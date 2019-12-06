@@ -22,7 +22,7 @@ public class Bullet : root_Bullet
     {
 
         Vector2 moveV = _dir.normalized * Time.deltaTime * _speed;
-        Move(moveV);     }
+        Move(moveV);         Destroy(gameObject, 2);     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
