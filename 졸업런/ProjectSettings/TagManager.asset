@@ -12,6 +12,8 @@ TagManager:
   - bullet
   - enemy
   - Missile
+  - Item
+  - Item_heart
   layers:
   - Default
   - TransparentFX
@@ -48,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 2308017469
     locked: 0

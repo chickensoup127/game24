@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject _enemy;
+    public GameObject _obj;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +17,11 @@ public class Spawner : MonoBehaviour
     }
     private void OnEnable()
     {
-        GenMonster();
+        GenObj();
     }
-    void GenMonster()
+    void GenObj()
     {
-        //GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
-        GameObject Enemy = Instantiate(_enemy);
-        Enemy.transform.position = transform.position;
+         GameObject Obj = Instantiate(_obj);
+        Obj.transform.position = transform.position;
     }
 }

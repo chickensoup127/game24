@@ -44,6 +44,7 @@ public class BattleManager : Manager
             || (col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Wall"))
             || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Wall"))
             || (col._sender.CompareTag("Player") && col._receiver.CompareTag("Wall"))
+            || (col._sender.CompareTag("Player") && col._receiver.CompareTag("Item_heart"))
 
 
             )
@@ -69,10 +70,19 @@ public class BattleManager : Manager
 
 
 
+        if (receiver.CompareTag("Item_heart"))
+        {
+            bvSender._hp += bvReceiver._atk;
+            ObjectManager.instance.AddRemoveObj(receiver);
 
-        bvReceiver._hp -= bvSender._atk;
+        }
+        else
+        {
+            bvReceiver._hp -= bvSender._atk;
+        }
 
-        if (bvReceiver._hp <= 0)
+        
+            if (bvReceiver._hp <= 0)
         {
             if (receiver.CompareTag("Player") && UI_GameOver != null)
             {
