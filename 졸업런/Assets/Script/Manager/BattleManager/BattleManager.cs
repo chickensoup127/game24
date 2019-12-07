@@ -85,6 +85,7 @@ public class BattleManager : Manager
             else if(receiver.CompareTag("Enemy_Boss") && UI_Ending!= null)
             {
                 ObjectManager.instance.AddRemoveObj(receiver);
+                Time.timeScale = 0;
                 UI_Ending.SetActive(true);
             }
             else

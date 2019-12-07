@@ -23,19 +23,22 @@ public class PlayerController : Controller
     // Update is called once per frame
     void Update()
     {
-        animator.SetInteger("Is_Move", 0);
         Vector3 moveV = Vector3.zero;
         SpriteRenderer renderer = _player.GetComponentInChildren<SpriteRenderer>();
       
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             moveV = Vector3.up;
-           // Debug.Log("up");
+
+            animator.SetInteger("Is_Move", 2);
+            // Debug.Log("up");
         }
 
         if (Input.GetAxisRaw("Vertical") < 0)
         {
             moveV = Vector3.down;
+
+            //animator.SetInteger("Is_Move", 0);
             //Debug.Log("down");
         }
 
@@ -44,6 +47,8 @@ public class PlayerController : Controller
             moveV= Vector3.left;
             //Debug.Log("left");
 
+            animator.SetInteger("Is_Move", 1);
+
             renderer.flipX = true;
         }
 
@@ -51,6 +56,7 @@ public class PlayerController : Controller
         {
             moveV = Vector3.right;
             animator.SetInteger("Is_Move", 1);
+            
             //Debug.Log("right");
 
             renderer.flipX = false;
