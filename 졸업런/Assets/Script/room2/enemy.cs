@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public Vector2 speed = new Vector2(10, 10);
+    public Vector2 speed = new Vector2(5f, 5f );
     public Vector2 direction = new Vector2(1, 0);
-
-    float xpos;
-    float ypos;
-
+    
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
     // Start is called before the first frame update
     void Start()
     {
         
+
+
     }
 
     // Update is called once per frame
@@ -25,11 +24,8 @@ public class enemy : MonoBehaviour
           speed.x * direction.x,
           speed.y * direction.y);
 
-       /* transform.position = new Vector2(xpos, ypos);
-        if (xpos > 32)
-        {
-            Destroy(gameObject);
-        }*/
+        
+
     }
 
     void FixedUpdate()
@@ -40,13 +36,23 @@ public class enemy : MonoBehaviour
         rigidbodyComponent.velocity = movement;
     }
 
-        void OnTriggerEnter(Collider other)
+        void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "bullet")
         {
             Debug.Log("kill");
             Destroy(gameObject);
+            Destroy(other);
 
         }
+
+        if (other.tag == "Player")
+        {
+            Debug.Log("distracted");
+            gameOn.distractionCurrent -= 1;
+            Destroy(gameObject);
+        }
+
+        
     }
 }

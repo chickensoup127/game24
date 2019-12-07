@@ -1,34 +1,74 @@
-﻿using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI;  public class AddBullet : MonoBehaviour {          public GameObject bullet;    
-    public float _speed = 2.0f;     private bool shootstate;     
+﻿using System.Collections; using System.Collections.Generic; using UnityEngine;   public class AddBullet : MonoBehaviour {
 
-    private Camera mainCamera;     Rigidbody2D rigid;      public float movespeed = 1f;
+     
+    public float _speed = 2.0f;     public float bulletVelocity=10f;
+    private bool FireState;     public float FireDelay;     
 
-    public Text thesis;
-    int score = 0;
+    private Camera mainCamera;     Rigidbody2D rigid;     public GameObject player;      public float movespeed = 1f;
+    public GameObject bullet1;
+    
+  
 
     // Use this for initialization
+
+   
+
+
     void Start () {
 
         tag = "Player";
-        shootstate = true;
-        rigid = gameObject.GetComponent<Rigidbody2D>();          thesis.text = "" + score;
+        FireState = true;
+        rigid = gameObject.GetComponent<Rigidbody2D>();          
+        
+        
 
     }       // Update is called once per frame  void Update () {
 
-        Shoot();
+        if (FireState)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                Vector2 direction = (Vector2)((worldMousePos - transform.position));
+                direction.Normalize();
+                StartCoroutine(ShootCtrl());
+
+                // Creates the bullet locally
+                GameObject bullet = (GameObject)Instantiate(
+                                        bullet1,
+                                        transform.position + (Vector3)(direction * 0.5f),
+                                        Quaternion.identity);
+
+                // Adds velocity to the bullet
+                bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
+            }
+        }
+
+        
 
     }
 
-    
+  IEnumerator ShootCtrl()
+    {
+        FireState = false;
+        yield return new WaitForSeconds(FireDelay);
+        FireState = true;
+
+    }
+
     void FixedUpdate()
     {
         Move();
-        Shoot();
+        
+
     }
 
 
     void Move()
     {
+        SpriteRenderer renderer = player.GetComponentInChildren<SpriteRenderer>();
+
         Vector3 moveVelocity = Vector3.zero;
 
         if (Input.GetAxisRaw("Vertical")>0)
@@ -47,12 +87,14 @@
         {
             moveVelocity = Vector3.left;
             Debug.Log("left");
+            renderer.flipX = true;
         }
 
         if ((Input.GetAxisRaw("Horizontal") > 0))
         {
             moveVelocity = Vector3.right;
             Debug.Log("right");
+            renderer.flipX = false;
         }
 
         
@@ -61,57 +103,29 @@
 
     }
 
-    void Shoot()
-    {
-        if (Input.GetMouseButtonDown(0)&&shootstate) 
-        {
-            shootstate = false;
-            Vector3 Mouseposition = Input.mousePosition;
-            Mouseposition = mainCamera.ScreenToWorldPoint(Mouseposition);
-           
-            //GameObject b= Instantiate(bullet, Mouseposition, Quaternion.identity);
-            GameObject b = ObjectManager.instance.GenerateObj("Bullet");
+    
 
-            bullet.transform.position = transform.position;
-           b.GetComponent<Bullet>()._dir = Mouseposition - bullet.transform.position;
-            StartCoroutine(ShootCtrl());
-            Debug.Log("Shoot");
-        }
-
-        
-    }
-
-    IEnumerator ShootCtrl()
-    {
-        
-        
-       
-        yield return new WaitForSeconds(0.5f);
-       
-        shootstate = true;
-
-
-    }
+   
 
     
         void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("enemy"))
-            {
-                Debug.Log("distracted");
-                //집중력감소 추가하기
-
-            }
+            
        
         if (other.CompareTag("Thesis"))
         {
             Debug.Log("thesis");
-            score += 1;
+           
             Destroy(other.gameObject);
+            gameOn.thesis += 1;
 
 
         }
     }
+
+
+   
+
 }
 
 
