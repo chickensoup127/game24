@@ -13,6 +13,8 @@ public class DeadZone : MonoBehaviour
             {
                 DataManager.Instance.PlayerDie = true;
                 Time.timeScale = 0;
+                SoundManager.Instance.StopSound("BG");//게임음악
+                DataManager.Instance.PlayerDie = true;
             }
         }
     }

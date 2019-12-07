@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart_Btu()
     {
+        SoundManager.Instance.PlaySound("BG");
         DataManager.Instance.score = 0;
         DataManager.Instance.PlayerDie = false;
         DataManager.Instance.Success = false;
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 DataManager.Instance.PlayerDie = true;//배경끄기
                 Time.timeScale = 0;
+                DataManager.Instance.PlayerDie = true;
             }
 
         }
@@ -60,12 +62,14 @@ public class GameManager : MonoBehaviour
         if (DataManager.Instance.PlayerDie == true)//플레이어 죽으면 엔드판넬 켜기
         {
             EndPanel.SetActive(true);
+            SoundManager.Instance.StopAllSound();//모든소리 끄기
         }
 
         if (DataManager.Instance.Success == true)//성공하면 성공판넬 켜기
         {
             SuccessPanel.SetActive(true);
             Time.timeScale = 0;
+            SoundManager.Instance.SoundAllMute();//모든소리 끄기
         }
         
     }
