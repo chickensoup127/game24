@@ -16,16 +16,46 @@ public class PlayerController : Controller
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        rigid = _player.GetComponent<Rigidbody2D>();
+        //rigid = _player.GetComponent<Rigidbody2D>();
         
     }
     
     // Update is called once per frame
     void Update()
     {
+
+        //=============================
+
+        if (Input.GetMouseButton(0)&&check&&Time.timeScale==1)
+        {
+            check = false;
+            Vector3 Mouseposition = Input.mousePosition;
+            Mouseposition = mainCamera.ScreenToWorldPoint(Mouseposition);
+            _player.GetComponent<Player>().ShootBullet(Mouseposition);
+            StartCoroutine(WaitForIt());
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            UI_Pause.SetActive(true);
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
+
+        Run();
+    }
+
+    void Run()
+    {
         Vector3 moveV = Vector3.zero;
+       
         SpriteRenderer renderer = _player.GetComponentInChildren<SpriteRenderer>();
-      
+    
         if (Input.GetAxisRaw("Vertical") > 0)
         {
             moveV = Vector3.up;
@@ -44,7 +74,7 @@ public class PlayerController : Controller
 
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            moveV= Vector3.left;
+            moveV = Vector3.left;
             //Debug.Log("left");
 
             animator.SetInteger("Is_Move", 1);
@@ -56,31 +86,15 @@ public class PlayerController : Controller
         {
             moveV = Vector3.right;
             animator.SetInteger("Is_Move", 1);
-            
+
             //Debug.Log("right");
 
             renderer.flipX = false;
         }
 
-        if (Input.GetMouseButton(0)&&check&&Time.timeScale==1)
-        {
-            check = false;
-            Vector3 Mouseposition = Input.mousePosition;
-            Mouseposition = mainCamera.ScreenToWorldPoint(Mouseposition);
-            _player.GetComponent<Player>().ShootBullet(Mouseposition);
-            StartCoroutine(WaitForIt());
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 0;
-            UI_Pause.SetActive(true);
-        }
-
         moveV = moveV.normalized * _speed * Time.deltaTime;
         _player.GetComponent<Entity>().Move(moveV);
-
+      
     }
     IEnumerator WaitForIt()
     {
