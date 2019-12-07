@@ -9,7 +9,7 @@ public class itemCtrl : MonoBehaviour
     //float time;
     void SpawnBook()
     {
-        float randomX = Random.Range(-32f, 0f); //적이 나타날 X좌표를 랜덤으로 생성해 줍니다.
+        float randomX = Random.Range(-30f, 10f); //적이 나타날 X좌표를 랜덤으로 생성해 줍니다.
         float randomY = Random.Range(5f, -0.5f);
         if (Spawn)
         {
@@ -19,7 +19,7 @@ public class itemCtrl : MonoBehaviour
     void Start()
     {
 
-        InvokeRepeating("SpawnBook", 1, 2); //5초후 부터, SpawnEnemy함수를 2초마다 반복해서 실행 시킵니다.
+        InvokeRepeating("SpawnBook", 1, 3); //5초후 부터, SpawnEnemy함수를 2초마다 반복해서 실행 시킵니다.
 
     }
     void Update()

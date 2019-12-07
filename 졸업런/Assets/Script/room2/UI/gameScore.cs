@@ -17,7 +17,7 @@ public class gameScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        thesis_num.text = gameOn.thesis.ToString();
+        thesis_num.text = ""+(int)gameOn.thesis;//.ToString();
         distraction_num.text = gameOn.distractionCurrent.ToString()+"/5";
     }
 }
