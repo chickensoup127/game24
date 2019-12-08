@@ -16,7 +16,6 @@ public class SoundController : MonoBehaviour
     }
     private void Awake()
     {
-        Debug.Log("켜짐");
         playSound(Music, musicPlayer, isloop);
     }
 
