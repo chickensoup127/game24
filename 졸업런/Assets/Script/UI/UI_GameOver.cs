@@ -6,8 +6,9 @@ using UnityEngine.Video;
 
 public class UI_GameOver : MonoBehaviour
 {
-    public VideoPlayer vp;
-    public GameObject bt;
+    public VideoPlayer vp,vp_thrall;
+    public GameObject bt1, bt2;
+    public GameObject thrall;
     private void Awake()
     {
         vp.Play();
@@ -24,16 +25,29 @@ public class UI_GameOver : MonoBehaviour
 
         if (vp.time >= vp.clip.length)
         {
-            bt.SetActive(true);
-        }
+            bt1.SetActive(true);
+            bt2.SetActive(true);
 
+        }
+        if (vp_thrall.time >= vp.clip.length)
+        {
+            bt1.SetActive(true);
+        }
     }
 
-    public void BtnClickGameOver()
+    public void BtnClickRestart()
     {
         SceneManager.LoadScene("room3");
         //씬 재시작 로직 실행
     }
+    public void BtnClickGameOver()
+    {
+        bt1.SetActive(false);
+        bt2.SetActive(false);
 
+        vp.Stop();
+        thrall.SetActive(true);
+        vp_thrall.Play();
+    }
 
 }
