@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
 
-        SceneManager.LoadScene("room1");
+        SceneManager.LoadScene("Main");
     }
     
 

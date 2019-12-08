@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DeadZone : MonoBehaviour
 {
+    public Canvas Score;
+
     //충돌
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +17,7 @@ public class DeadZone : MonoBehaviour
                 DataManager.Instance.PlayerDie = true;
                 Time.timeScale = 0;
                 SoundManager.Instance.StopSound("BG");//게임음악
-                DataManager.Instance.PlayerDie = true;
+                Score.enabled = false;
             }
         }
     }
