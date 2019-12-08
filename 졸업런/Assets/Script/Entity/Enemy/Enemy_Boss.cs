@@ -73,11 +73,18 @@ public class Enemy_Boss : Entity
 
     void ShootBullet(Vector3 dir)
     {
+
+        Vector3 temp = new Vector3();
+
+        temp = transform.position;
+        temp.y += 1;
+        
+        
         GameObject bullet = ObjectManager.instance.GenerateObj("Enemy_Missile");//Instantiate(prefab);
         bullet.GetComponent<Enemy_Bullet>().ApplyBattleValue(bv);
         bullet.GetComponent<Enemy_Bullet>()._speed = 2.0f;
         bullet.GetComponent<Enemy_Bullet>()._dir = dir;
-        bullet.transform.position = transform.position;
+        bullet.transform.position = temp;
     }
 
    

@@ -6,6 +6,7 @@ public class BattleManager : Manager
 {
     public GameObject UI_GameOver;
     public GameObject UI_Ending;
+    public GameObject UI_PS;
     List<Collision> _collisionLst = new List<Collision>();
     // Start is called before the first frame update
     void Start()
@@ -87,7 +88,7 @@ public class BattleManager : Manager
             if (receiver.CompareTag("Player") && UI_GameOver != null)
             {
 
-                
+                Time.timeScale = 0;
                 UI_GameOver.SetActive(true);
                 // 게임오버 ui를 보여준다.
 
@@ -95,7 +96,7 @@ public class BattleManager : Manager
             else if(receiver.CompareTag("Enemy_Boss") && UI_Ending!= null)
             {
                 ObjectManager.instance.AddRemoveObj(receiver);
-                Time.timeScale = 0;
+                //UI_PS.SetActive(false);
                 UI_Ending.SetActive(true);
             }
             else

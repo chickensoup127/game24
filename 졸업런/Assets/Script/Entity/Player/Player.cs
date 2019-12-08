@@ -22,7 +22,7 @@ public class Player : Entity
     public void ShootBullet(Vector3 targetpos)
     {
 
-        Vector3 temp = new Vector2();
+        Vector3 temp = new Vector3();
         temp = transform.position;
         temp.y += 1;
         GameObject bullet = ObjectManager.instance.GenerateObj("Player_Missile");
