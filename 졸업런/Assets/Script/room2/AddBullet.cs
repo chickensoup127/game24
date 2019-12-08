@@ -2,7 +2,7 @@
 
      
     public float _speed = 2.0f;     public float bulletVelocity=10f;
-    private bool FireState;     public float FireDelay;      AudioSource shootingSound;        
+    private bool FireState;     public float FireDelay;             
 
     private Camera mainCamera;     Rigidbody2D rigid;     public GameObject player;      public float movespeed = 1f;
     public GameObject bullet1;
@@ -42,7 +42,7 @@
 
                 // Adds velocity to the bullet
                 bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
-                shootingSound.Play();
+               
             }
         }
 
