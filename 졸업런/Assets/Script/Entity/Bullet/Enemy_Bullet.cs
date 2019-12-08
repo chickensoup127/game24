@@ -18,6 +18,7 @@ public class Enemy_Bullet : root_Bullet
     // Update is called once per frame
     void Update()
     {
+
         Vector3 moveV = _dir.normalized * Time.deltaTime * _speed;
         Move(moveV);
     }

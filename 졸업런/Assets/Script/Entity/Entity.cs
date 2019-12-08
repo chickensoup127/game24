@@ -17,9 +17,8 @@ public class Entity : MonoBehaviour
         _bv = new BattleValue(hp, atk);
     }
 
-    public void Move(Vector2 moveVector)
+    public void Move(Vector3 moveVector)
     {
-        transform.Translate(moveVector);
-        //transform.FindChild("body").gameObject.GetComponent<Rigidbody2D>().AddForce(moveVector);
+        transform.position += moveVector;
     }
 }

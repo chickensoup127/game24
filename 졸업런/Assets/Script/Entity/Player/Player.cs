@@ -21,10 +21,13 @@ public class Player : Entity
     }
     public void ShootBullet(Vector3 targetpos)
     {
-     
+
+        Vector3 temp = new Vector3();
+        temp = transform.position;
+        temp.y += 1;
         GameObject bullet = ObjectManager.instance.GenerateObj("Player_Missile");
         bullet.GetComponent<Player_Bullet>().ApplyBattleValue(bv);
-        bullet.transform.position = transform.position;
+        bullet.transform.position = temp;
         bullet.GetComponent<Player_Bullet>()._dir = targetpos - bullet.transform.position;
 
     }

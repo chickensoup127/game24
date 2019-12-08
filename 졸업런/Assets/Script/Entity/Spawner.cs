@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject _enemy;
+    public GameObject _obj;
     // Start is called before the first frame update
     void Start()
     {
-
-        GenMonster();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-           
     }
-
-    void GenMonster()
+    private void OnEnable()
     {
-        //GameObject prefab = Resources.Load(_enemy.tag) as GameObject;
-        GameObject Enemy = Instantiate(_enemy);
-        Enemy.transform.position = transform.position;
+        GenObj();
+    }
+    void GenObj()
+    {
+         GameObject Obj = Instantiate(_obj);
+        Obj.transform.position = transform.position;
     }
 }

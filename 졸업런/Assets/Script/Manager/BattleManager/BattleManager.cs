@@ -5,12 +5,16 @@ using UnityEngine;
 public class BattleManager : Manager
 {
     public GameObject UI_GameOver;
+    public GameObject UI_Ending;
+    public GameObject UI_PS;
+    public SoundController sound_background ;
+    public GameObject sound_dead;
     List<Collision> _collisionLst = new List<Collision>();
     // Start is called before the first frame update
     void Start()
     {
         
-
+        
 
     }
 
@@ -43,6 +47,7 @@ public class BattleManager : Manager
             || (col._sender.CompareTag("Player_Missile") && col._receiver.CompareTag("Wall"))
             || (col._sender.CompareTag("Enemy_Missile") && col._receiver.CompareTag("Wall"))
             || (col._sender.CompareTag("Player") && col._receiver.CompareTag("Wall"))
+            || (col._sender.CompareTag("Player") && col._receiver.CompareTag("Item_heart"))
 
 
             )
@@ -68,20 +73,43 @@ public class BattleManager : Manager
 
 
 
+        if (receiver.CompareTag("Item_heart"))
+        {
+            bvSender._hp += bvReceiver._atk;
+            ObjectManager.instance.AddRemoveObj(receiver);
 
-        bvReceiver._hp -= bvSender._atk;
+        }
+        else
+        {
+            bvReceiver._hp -= bvSender._atk;
+        }
 
-        if (bvReceiver._hp <= 0)
+        
+            if (bvReceiver._hp <= 0)
         {
             if (receiver.CompareTag("Player") && UI_GameOver != null)
             {
-                //UI_GameOver.SetActive(true);
+                UI_PS.SetActive(false);
+                Time.timeScale = 0;
+                sound_background.offsound();
+                UI_GameOver.SetActive(true);
                 // 게임오버 ui를 보여준다.
+
+            }
+            else if(receiver.CompareTag("Enemy_Boss") && UI_Ending!= null)
+            {
+                ObjectManager.instance.AddRemoveObj(receiver);
+                sound_background.offsound();
+                sound_dead.SetActive(true);
+                UI_PS.SetActive(false);
+                UI_Ending.SetActive(true);
             }
             else
             {
                 ObjectManager.instance.AddRemoveObj(receiver);
             }
+
+            
         }
 
         if (sender.CompareTag("Player_Missile") || sender.CompareTag("Enemy_Missile"))
