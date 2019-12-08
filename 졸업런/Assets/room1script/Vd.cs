@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.UI;
 
 public class Vd : MonoBehaviour
 {
-
+    public Canvas Score;
     public VideoPlayer vp;
     public GameObject obj;
 
@@ -15,6 +16,7 @@ public class Vd : MonoBehaviour
         Time.timeScale = 0;
         vp.Prepare();
         vp.Play();
+        Score.enabled = false;
     }
     // Start is called before the first frame update
 
@@ -28,6 +30,7 @@ public class Vd : MonoBehaviour
                 vp.Stop();
                 Time.timeScale = 1;
                 obj.SetActive(true);
+                Score.enabled = true;
             }
 
         }
