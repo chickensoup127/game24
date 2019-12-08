@@ -22,21 +22,23 @@ public class gameOn : MonoBehaviour
     public Canvas GameOn;
     public Canvas GameFail;
     public Canvas GameSuccess;
+    public Canvas Minimap;
     // Start is called before the first frame update
     void Start()
     {
      
         GameFail.enabled = false;
         ThesisBar.fillAmount = 0;
-    }
+      
+}
 
     
 
     // Update is called once per frame
     private void Update()
     {
-      
 
+        
 
         if (!isDie)
         {
@@ -51,6 +53,8 @@ public class gameOn : MonoBehaviour
                 GameOn.enabled = false;
                 GameFail.enabled = true;
                 Time.timeScale = 0;
+                Sound.Instance.StopSound("bgm");
+                Minimap.enabled = false;
             }
         }
 
@@ -65,7 +69,8 @@ public class gameOn : MonoBehaviour
                 GameOn.enabled = false;
                 GameSuccess.enabled = true;
                 Time.timeScale = 0;
-
+                Sound.Instance.StopSound("bgm");
+                Minimap.enabled = false;
             }
         }
 
