@@ -10931,6 +10931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UI_GameOver: {fileID: 562671170}
   UI_Ending: {fileID: 1848626135}
+  UI_PS: {fileID: 1044017430}
   sound_background: {fileID: 1273310076}
   sound_dead: {fileID: 993239390}
 --- !u!1 &1894978207

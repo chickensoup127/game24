@@ -6,6 +6,7 @@ public class BattleManager : Manager
 {
     public GameObject UI_GameOver;
     public GameObject UI_Ending;
+    public GameObject UI_PS;
     public SoundController sound_background ;
     public GameObject sound_dead;
     List<Collision> _collisionLst = new List<Collision>();
@@ -88,7 +89,7 @@ public class BattleManager : Manager
         {
             if (receiver.CompareTag("Player") && UI_GameOver != null)
             {
-
+                UI_PS.SetActive(false);
                 Time.timeScale = 0;
                 sound_background.offsound();
                 UI_GameOver.SetActive(true);
@@ -100,6 +101,7 @@ public class BattleManager : Manager
                 ObjectManager.instance.AddRemoveObj(receiver);
                 sound_background.offsound();
                 sound_dead.SetActive(true);
+                UI_PS.SetActive(false);
                 UI_Ending.SetActive(true);
             }
             else
