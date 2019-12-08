@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &-3964503091239473301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 7.2, y: 12.8}
-  m_EdgeRadius: 0.1
+  m_EdgeRadius: 0
 --- !u!114 &972686577
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ public class enemy : MonoBehaviour
     
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
+
+    AudioSource dieSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,15 @@ public class enemy : MonoBehaviour
           speed.x * direction.x,
           speed.y * direction.y);
 
-        
+        if (transform.position.x < -30)
+        {
+            Destroy(gameObject);
+        }
+
+        if (transform.position.x >30)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -36,23 +47,24 @@ public class enemy : MonoBehaviour
         rigidbodyComponent.velocity = movement;
     }
 
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "bullet")
         {
             Debug.Log("kill");
             Destroy(gameObject);
             Destroy(other);
+            dieSound.Play();
 
         }
 
-        if (other.tag == "Player")
+        if (other.tag=="Player")
         {
             Debug.Log("distracted");
             gameOn.distractionCurrent -= 1;
             Destroy(gameObject);
         }
 
-        
     }
+   
 }
