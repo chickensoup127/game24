@@ -10,7 +10,6 @@ public class enemy : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
 
-    AudioSource dieSound;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +53,7 @@ public class enemy : MonoBehaviour
             Debug.Log("kill");
             Destroy(gameObject);
             Destroy(other);
-            dieSound.Play();
+        
 
         }
 
