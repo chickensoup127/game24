@@ -2,22 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 public class UI_ChatScript : MonoBehaviour
 {
     public GameObject spawner;
     public GameObject _owner;
     public Text chatText; //텍스트가 출력되는 부분
     public Text CharacterName;
+    public VideoPlayer vp;
+    public GameObject ts;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0;
+        vp.Play();
+
         StartCoroutine(TextPractice());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (vp.time >= vp.clip.length|| Input.GetButtonDown("Submit") || Input.GetButtonDown("Jump"))
+        {
+            vp.Stop();
+            ts.SetActive(true);
+        }
+
         //_owner.SetActive(true);
     }
     
