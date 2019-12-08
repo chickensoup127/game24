@@ -2,8 +2,7 @@
 
      
     public float _speed = 2.0f;     public float bulletVelocity=10f;
-    private bool FireState;     public float FireDelay;      AudioSource shootingSound;        
-
+    private bool FireState;     public float FireDelay;       
     private Camera mainCamera;     Rigidbody2D rigid;     public GameObject player;      public float movespeed = 1f;
     public GameObject bullet1;
     
@@ -28,6 +27,9 @@
         {
             if (Input.GetButtonDown("Fire1"))
             {
+                
+
+
                 Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
                 Vector2 direction = (Vector2)((worldMousePos - transform.position));
@@ -42,7 +44,9 @@
 
                 // Adds velocity to the bullet
                 bullet.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
-                shootingSound.Play();
+
+                Sound.Instance.PlaySound("shoot");
+
             }
         }
 
@@ -119,6 +123,7 @@
            
             Destroy(other.gameObject);
             gameOn.thesis += 1;
+            Sound.Instance.PlaySound("getItem");
 
 
         }

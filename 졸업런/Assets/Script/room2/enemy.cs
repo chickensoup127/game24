@@ -62,6 +62,7 @@ public class enemy : MonoBehaviour
             Debug.Log("distracted");
             gameOn.distractionCurrent -= 1;
             Destroy(gameObject);
+
         }
 
     }
