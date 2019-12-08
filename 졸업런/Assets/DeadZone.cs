@@ -12,9 +12,6 @@ public class DeadZone : MonoBehaviour
             if (collision.gameObject.tag.CompareTo("Player") == 0)
             {
                 DataManager.Instance.PlayerDie = true;
-                Time.timeScale = 0;
-                SoundManager.Instance.StopSound("BG");//게임음악
-                DataManager.Instance.PlayerDie = true;
             }
         }
     }

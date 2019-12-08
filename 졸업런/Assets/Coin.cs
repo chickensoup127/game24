@@ -9,7 +9,6 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.tag.CompareTo("Player") == 0)
         {
-            SoundManager.Instance.PlaySound("Coin");
             DataManager.Instance.score += 1;
             gameObject.SetActive(false);//화면에서 삭제
         }
