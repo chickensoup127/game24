@@ -98,6 +98,7 @@ public class BattleManager : Manager
             }
             else if(receiver.CompareTag("Enemy_Boss") && UI_Ending!= null)
             {
+                Time.timeScale = 0;
                 ObjectManager.instance.AddRemoveObj(receiver);
                 sound_background.offsound();
                 sound_dead.SetActive(true);
