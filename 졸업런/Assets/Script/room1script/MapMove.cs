@@ -11,6 +11,7 @@ public class MapMove : MonoBehaviour
         if (!DataManager.Instance.PlayerDie)
         {
             transform.Translate(-mapSpeed * Time.deltaTime, 0, 0);
+           
         }
     }
 }

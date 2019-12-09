@@ -29,7 +29,8 @@ public class Vd : MonoBehaviour
                 Time.timeScale = 1;
                 obj.SetActive(true);
                 Score.enabled = true;
-            
+            SoundManager.Instance.PlaySound("BG");
+
 
         }
     }

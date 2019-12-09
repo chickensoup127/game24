@@ -15,7 +15,7 @@ public class LoadScene : MonoBehaviour
 
     public void Restart()
     {
-        Sound.Instance.PlaySound("bgm");
+        //Sound.Instance.PlaySound("bgm");
         gameOn.thesis = 0f;
         gameOn.distractionCurrent = 5f;
         Time.timeScale = 1;
@@ -24,12 +24,13 @@ public class LoadScene : MonoBehaviour
 
     }
 
-    public void Sucees()
+    public void Sucess()
     {
         SceneManager.LoadScene("room3");
       
-
     }
+
+
 
     public void Quitgame()
     {
