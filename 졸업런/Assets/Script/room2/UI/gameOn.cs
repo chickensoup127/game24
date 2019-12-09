@@ -29,7 +29,7 @@ public class gameOn : MonoBehaviour
      
         GameFail.enabled = false;
         ThesisBar.fillAmount = 0;
-      
+        
 }
 
     

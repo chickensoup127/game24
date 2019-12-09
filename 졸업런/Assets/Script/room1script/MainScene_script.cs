@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class MainScene_script : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,11 +14,14 @@ public class MainScene_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Return))
+            SceneManager.LoadScene("room1");
     }
 
-    public void BtnClickstart()
+  /*  public void BtnClickstart()
     {
-        SceneManager.LoadScene("room1");
+        if (Input.GetKey(KeyCode.Return))
+            SceneManager.LoadScene("room1");
     }
+    */
 }

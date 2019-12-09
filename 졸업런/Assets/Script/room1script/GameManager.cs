@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         //1단위
         int temp3 = DataManager.Instance.score % 10;
         NumberImage[2].GetComponent<Image>().sprite = Number[temp3];
+     
 
         if (!DataManager.Instance.PlayerDie)
         {

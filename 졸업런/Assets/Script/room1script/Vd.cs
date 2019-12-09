@@ -24,10 +24,12 @@ public class Vd : MonoBehaviour
     {
         if (vp.time >= vp.clip.length || Input.GetKeyDown(KeyCode.Return))
         {
+
             vp.Stop();
             Time.timeScale = 1;
             obj.SetActive(true);
             SoundManager.Instance.PlaySound("BG");
+
         }
 
     }

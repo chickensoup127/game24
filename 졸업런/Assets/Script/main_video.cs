@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class Success : MonoBehaviour
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
+public class main_video : MonoBehaviour
 {
 
-    public Canvas success_UI;
-
+    public VideoPlayer start;
     // Start is called before the first frame update
     void Start()
     {
-        success_UI.enabled = false;
+        start.Play();
     }
 
     // Update is called once per frame
