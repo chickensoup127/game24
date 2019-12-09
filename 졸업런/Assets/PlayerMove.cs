@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (!DataManager.Instance.PlayerDie)
         {
+            SoundManager.Instance.PlaySound("Jump");
             if (jumpCount == 0)//점프안함
             {
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, jump, 0);
@@ -33,6 +34,11 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag.CompareTo("Land") == 0)
         {
             jumpCount = 0;
+        }
+
+        if(collision.gameObject.tag.CompareTo("Block")==0)
+        {
+            DataManager.Instance.playTimeCurrent -= 0.5f;
         }
     }
 
