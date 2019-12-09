@@ -28,6 +28,7 @@ public class UI_PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("room1");
         
     }
