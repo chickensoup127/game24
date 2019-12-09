@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
             {
                 DataManager.Instance.PlayerDie = true;//배경끄기
                 Time.timeScale = 0;
-                DataManager.Instance.PlayerDie = true;
             }
 
         }
