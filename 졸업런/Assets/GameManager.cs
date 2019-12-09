@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1;
 
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("room1");
     }
     
 
@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         if (DataManager.Instance.Success == true)//성공하면 성공판넬 켜기
         {
             SuccessPanel.SetActive(true);
-            Time.timeScale = 0;
             SoundManager.Instance.SoundAllMute();//모든소리 끄기
         }
         

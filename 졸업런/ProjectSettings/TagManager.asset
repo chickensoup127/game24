@@ -12,6 +12,8 @@ TagManager:
   - bullet
   - enemy
   - Missile
+  - Item
+  - Item_heart
   - Thesis
   layers:
   - Default
@@ -26,7 +28,7 @@ TagManager:
   - enemy
   - player_misille
   - enemy_missile
-  - 
+  - UI_video
   - 
   - 
   - 
@@ -49,4 +51,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 2308017469
+    locked: 0
+  - name: video
+    uniqueID: 446617849
+    locked: 0
+  - name: UI
+    uniqueID: 1688110293
     locked: 0

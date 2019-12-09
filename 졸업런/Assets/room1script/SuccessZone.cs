@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class SuccessZone : MonoBehaviour
 {
 
@@ -15,7 +14,9 @@ public class SuccessZone : MonoBehaviour
         {
             DataManager.Instance.Success = true;
             Score.enabled = false;
-            SceneManager.LoadScene("room2");
+            Time.timeScale = 0;
+
+
         }
     }
 }

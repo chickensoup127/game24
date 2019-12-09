@@ -23,15 +23,13 @@ public class Vd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vp.time >= vp.clip.length)
+        if (vp.time >= vp.clip.length|| Input.GetKeyDown(KeyCode.Return))
         {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
                 vp.Stop();
                 Time.timeScale = 1;
                 obj.SetActive(true);
                 Score.enabled = true;
-            }
+            
 
         }
     }
