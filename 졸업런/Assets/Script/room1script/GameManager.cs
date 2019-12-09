@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
     public void Restart_Btu()
     {
-        SoundManager.Instance.PlaySound("BG");
+        SoundManager.Instance.StopSound("BG");
         DataManager.Instance.score = 0;
         DataManager.Instance.PlayerDie = false;
         DataManager.Instance.Success = false;
