@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2603898133669124205}
   m_Layer: 11
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player_Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 491394671533420033}
   m_Layer: 10
   m_Name: visual_obj
-  m_TagString: Untagged
+  m_TagString: Player_Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 9200153420212407830}
   m_Layer: 10
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Player_Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
