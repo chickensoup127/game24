@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Vd : MonoBehaviour
 {
-
     public VideoPlayer vp;
     public GameObject obj;
+    public Canvas Score;
 
 
     private void Awake()
@@ -16,6 +16,7 @@ public class Vd : MonoBehaviour
         Time.timeScale = 0;
         vp.Prepare();
         vp.Play();
+        Score.enabled = false;
     }
     // Start is called before the first frame update
 
@@ -29,7 +30,7 @@ public class Vd : MonoBehaviour
             Time.timeScale = 1;
             obj.SetActive(true);
             SoundManager.Instance.PlaySound("BG");
-
+            Score.enabled = true;
         }
 
     }

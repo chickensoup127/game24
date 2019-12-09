@@ -27,6 +27,18 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("room1");
     }
+
+    public void Home_Btu()
+    {
+        SceneManager.LoadScene("main");
+        Sound.Instance.StopSound("bgm");
+
+    }
+
+    public void Next_Btu()
+    {
+        SceneManager.LoadScene("room2");
+    }
     
 
     private void Update()
