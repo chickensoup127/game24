@@ -10,7 +10,7 @@ public class GameStart : MonoBehaviour
     public VideoPlayer video_start;
     public Canvas Minimap;
 
-    bool isPause = true;
+    bool isStart = false;
 
 
     // Start is called before the first frame update
@@ -31,15 +31,19 @@ public class GameStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Return))
+        if (isStart == false)
         {
-            Time.timeScale = 1;
-            gamestart.enabled = false;
-            GameOn.enabled = true;
-            video_start.Stop();
-            Minimap.enabled = true;
-            Sound.Instance.PlaySound("bgm");
+            if (Input.GetKey(KeyCode.Return))
+            {
+                isStart = true;
+                Time.timeScale = 1;
+                gamestart.enabled = false;
+                GameOn.enabled = true;
+                video_start.Stop();
+                Minimap.enabled = true;
+                Sound.Instance.PlaySound("bgm");
 
+            }
         }
 
     }

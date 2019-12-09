@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         if (DataManager.Instance.Success == true)//성공하면 성공판넬 켜기
         {
             SuccessPanel.SetActive(true);
+            EndPanel.SetActive(false);
             SoundManager.Instance.SoundAllMute();//모든소리 끄기
         }
         
