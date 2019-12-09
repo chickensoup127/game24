@@ -74,8 +74,10 @@ public class UI_ChatScript : MonoBehaviour
 
     IEnumerator TextPractice()
     {
-        yield return StartCoroutine(Update_Text("그동안 열심히 했군요 학생.", "교수님"));
-        yield return StartCoroutine(Update_Text("이렇게 된거 제 연구실로 오시는건 어떻습니까?", "교수님"));
+        yield return StartCoroutine(Update_Text("You've worked hard, student", "Professor"));
+        yield return StartCoroutine(Update_Text("How about coming to my lab?", "Professor"));
+        
+
         spawner.SetActive(true);
         _owner.SetActive(false);
 
