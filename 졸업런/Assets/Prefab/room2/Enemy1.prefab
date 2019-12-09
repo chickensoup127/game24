@@ -99,6 +99,7 @@ MonoBehaviour:
   direction: {x: 1, y: 0}
   ParticleDestroy: {fileID: 1995403933065894, guid: 4961a16ba01e09547be3e1c9d16d5ad0,
     type: 3}
+  ParticleDistracted: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
 --- !u!50 &9020400298791692372
 Rigidbody2D:
   serializedVersion: 4

@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
 
+
     public void main()
     {
         SceneManager.LoadScene("main");
-        
+        Sound.Instance.StopSound("bgm");
+
     }
 
     public void Restart()
     {
+        Sound.Instance.PlaySound("bgm");
+        gameOn.thesis = 0f;
+        gameOn.distractionCurrent = 5f;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("room2");
 
     }

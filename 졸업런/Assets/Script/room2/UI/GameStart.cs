@@ -22,6 +22,7 @@ public class GameStart : MonoBehaviour
         GameOn.enabled = false;
         video_start.Play();
         Minimap.enabled = false;
+        //Sound.Instance.StopAllSound();
 
 
 
@@ -37,6 +38,7 @@ public class GameStart : MonoBehaviour
             GameOn.enabled = true;
             video_start.Stop();
             Minimap.enabled = true;
+            Sound.Instance.PlaySound("bgm");
 
         }
 

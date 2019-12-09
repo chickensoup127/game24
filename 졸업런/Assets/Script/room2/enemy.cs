@@ -10,6 +10,7 @@ public class enemy : MonoBehaviour
     private Vector2 movement;
     private Rigidbody2D rigidbodyComponent;
     public GameObject ParticleDestroy;
+    public GameObject ParticleDistracted;
     private Transform tr;
 
     // Start is called before the first frame update
@@ -54,7 +55,9 @@ public class enemy : MonoBehaviour
             Debug.Log("kill");
             Destroy(gameObject);
             Destroy(other);
-        
+            Sound.Instance.PlaySound("destroy");
+            Instantiate(ParticleDestroy, tr.position, Quaternion.identity);
+
 
         }
 
@@ -64,8 +67,9 @@ public class enemy : MonoBehaviour
             gameOn.distractionCurrent -= 1;
             Destroy(gameObject);
             direction = new Vector2(0, 0);
-            Instantiate(ParticleDestroy, tr.position, Quaternion.identity);
-            Sound.Instance.PlaySound("destroy");
+            Sound.Instance.PlaySound("distracted");
+            Instantiate(ParticleDistracted, tr.position, Quaternion.identity);
+           
 
         }
 
