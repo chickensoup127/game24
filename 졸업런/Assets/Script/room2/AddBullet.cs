@@ -3,7 +3,7 @@
      
     public float _speed = 2.0f;     public float bulletVelocity=10f;
     private bool FireState;     public float FireDelay;       
-    private Camera mainCamera;     Rigidbody2D rigid;     public GameObject player;      public float movespeed = 1f;
+    private Camera mainCamera;     Rigidbody2D rigid;        public GameObject player;      public float movespeed = 1f;
     public GameObject bullet1;
     public GameObject Particle;
 
@@ -17,7 +17,7 @@
 
         tag = "Player";
         FireState = true;
-        rigid = gameObject.GetComponent<Rigidbody2D>();          
+        rigid = gameObject.GetComponent<Rigidbody2D>();                
         
         
 
@@ -80,12 +80,14 @@
         {
             moveVelocity = Vector3.up;
             Debug.Log("up");
+            
         }
 
         if (Input.GetAxisRaw("Vertical")<0)
         {
             moveVelocity = Vector3.down;
             Debug.Log("down");
+            
         }
 
         if (Input.GetAxisRaw("Horizontal")<0)
@@ -93,6 +95,7 @@
             moveVelocity = Vector3.left;
             Debug.Log("left");
             renderer.flipX = true;
+            
         }
 
         if ((Input.GetAxisRaw("Horizontal") > 0))
@@ -100,6 +103,7 @@
             moveVelocity = Vector3.right;
             Debug.Log("right");
             renderer.flipX = false;
+            
         }
 
         
@@ -108,9 +112,8 @@
 
     }
 
-    
 
-   
+  
 
     
         void OnTriggerEnter2D(Collider2D other)

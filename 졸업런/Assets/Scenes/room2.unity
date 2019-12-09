@@ -2448,7 +2448,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 186, y: 152.99997}
-  m_SizeDelta: {x: 201, y: 25}
+  m_SizeDelta: {x: 201, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &755883181
 SpriteRenderer:
@@ -3618,7 +3618,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d3a2867677e00f84882de6fb893f5dc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c47fa04fc0f4a644c8fc3ea6fb503fe6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3701,7 +3701,7 @@ Animator:
   m_GameObject: {fileID: 953660499}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5ced9f5a60906dd4a88639c68106547f, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5f76a0d67d0d604e9d60ec7e6c4e0df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8538,7 +8538,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -154, y: 153}
-  m_SizeDelta: {x: 201, y: 25}
+  m_SizeDelta: {x: 201, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1969994717
 SpriteRenderer:
