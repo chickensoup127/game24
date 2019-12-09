@@ -17,7 +17,6 @@ public class UI_ChatScript : MonoBehaviour
         Time.timeScale = 0;
         vp.Play();
 
-        StartCoroutine(TextPractice());
     }
 
     // Update is called once per frame
@@ -27,6 +26,7 @@ public class UI_ChatScript : MonoBehaviour
         {
             vp.Stop();
             ts.SetActive(true);
+            StartCoroutine(TextPractice());
         }
 
         //_owner.SetActive(true);
