@@ -25,7 +25,7 @@ public class Succes_Video : MonoBehaviour
             
                 vp.Stop();
                 Time.timeScale = 1;
-                SceneManager.LoadScene("room2");
+                //SceneManager.LoadScene("room2");
             
 
         }
