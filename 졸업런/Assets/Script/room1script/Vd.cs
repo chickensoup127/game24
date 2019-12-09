@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Vd : MonoBehaviour
 {
-    public Canvas Score;
     public VideoPlayer vp;
     public GameObject obj;
+    public Canvas Score;
 
 
     private void Awake()
@@ -23,15 +23,15 @@ public class Vd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vp.time >= vp.clip.length|| Input.GetKeyDown(KeyCode.Return))
+        if (vp.time >= vp.clip.length || Input.GetKeyDown(KeyCode.Return))
         {
-                vp.Stop();
-                Time.timeScale = 1;
-                obj.SetActive(true);
-                Score.enabled = true;
+
+            vp.Stop();
+            Time.timeScale = 1;
+            obj.SetActive(true);
             SoundManager.Instance.PlaySound("BG");
-
-
+            Score.enabled = true;
         }
+
     }
 }
