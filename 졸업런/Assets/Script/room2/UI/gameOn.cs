@@ -29,8 +29,10 @@ public class gameOn : MonoBehaviour
      
         GameFail.enabled = false;
         ThesisBar.fillAmount = 0;
-        
-}
+        thesis = 0f;
+        distractionCurrent = 5f;
+
+    }
 
     
 
@@ -55,7 +57,8 @@ public class gameOn : MonoBehaviour
                 Time.timeScale = 0;
                 Sound.Instance.StopSound("bgm");
                 Minimap.enabled = false;
-           
+               
+
             }
         }
 
