@@ -56,23 +56,31 @@
 
             }
 
-            if (gameOn.thesis == 10)
-            {
-                FireState = false;
-            }
+            
 
-            if (gameOn.distractionCurrent == 0)
-            {
-                FireState = false;
-            }
-
-            if(GamePause.enabled == true){
-                FireState = false;
-            }
-                
         }
 
-        
+        if (gameOn.thesis == 10)
+        {
+            FireState = false;
+        }
+
+        if (gameOn.distractionCurrent == 0)
+        {
+            FireState = false;
+        }
+
+        if (GamePause.enabled == true)
+        {
+            FireState = false;
+        }
+
+        if (GamePause.enabled == false)
+        {
+            FireState = true;
+        }
+
+
 
     }
 
