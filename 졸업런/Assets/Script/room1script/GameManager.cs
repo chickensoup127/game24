@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         {
             SuccessPanel.SetActive(true);
             EndPanel.SetActive(false);
-            SoundManager.Instance.SoundAllMute();//모든소리 끄기
+            SoundManager.Instance.StopAllSound();//모든소리 끄기
         }
         
     }
