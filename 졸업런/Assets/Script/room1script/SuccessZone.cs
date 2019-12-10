@@ -12,7 +12,7 @@ public class SuccessZone : MonoBehaviour
     void Start()
     {
         
-}
+    }
     //충돌
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,7 +21,6 @@ public class SuccessZone : MonoBehaviour
             DataManager.Instance.Success = true;
             Score.enabled = false;
             Time.timeScale = 0;
-            
 
 
         }
