@@ -10,9 +10,10 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("main");
         Sound.Instance.StopSound("bgm");
-        gameOn.thesis = 0f;
-        gameOn.distractionCurrent = 5f;
+       
+
         Time.timeScale = 1;
+
 
     }
 

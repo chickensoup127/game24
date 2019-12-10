@@ -57,7 +57,7 @@ public class enemy : MonoBehaviour
             Destroy(other);
             Sound.Instance.PlaySound("destroy");
             Instantiate(ParticleDestroy, tr.position, Quaternion.identity);
-
+        
 
         }
 

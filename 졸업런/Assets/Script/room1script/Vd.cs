@@ -9,9 +9,12 @@ public class Vd : MonoBehaviour
     public VideoPlayer vp;
     public GameObject obj;
     public Canvas Score;
-    
+    public bool PlayerDie = false;
 
-
+    void Start()
+    {
+        PlayerDie = false;
+    }
     private void Awake()
     {
         Time.timeScale = 0;
@@ -24,15 +27,18 @@ public class Vd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (/*vp.time >= vp.clip.length || */Input.GetKeyDown(KeyCode.Return))
+
+        if (PlayerDie == false)
         {
-
-            vp.Stop();
-            Time.timeScale = 1;
-            obj.SetActive(true);
-            SoundManager.Instance.PlaySound("BG");
-            Score.enabled = true;
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                PlayerDie = true; ;
+                vp.Stop();
+                Time.timeScale = 1;
+                obj.SetActive(true);
+                SoundManager.Instance.PlaySound("BG");
+                Score.enabled = true;
+            }
         }
-
     }
 }
