@@ -12,7 +12,8 @@ public class LoadScene : MonoBehaviour
         Sound.Instance.StopSound("bgm");
         gameOn.thesis = 0f;
         gameOn.distractionCurrent = 5f;
-        Time.timeScale = 0;
+
+        Time.timeScale = 1;
 
 
     }

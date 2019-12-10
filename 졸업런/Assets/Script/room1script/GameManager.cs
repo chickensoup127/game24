@@ -37,7 +37,11 @@ public class GameManager : MonoBehaviour
     public void Home_Btu()
     {
         SceneManager.LoadScene("main");
-        Sound.Instance.StopSound("bgm");
+        SoundManager.Instance.StopSound("BG");
+        DataManager.Instance.score = 0;
+        DataManager.Instance.PlayerDie = false;
+        DataManager.Instance.Success = false;
+        DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
 
     }
 
