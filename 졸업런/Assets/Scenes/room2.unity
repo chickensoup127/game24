@@ -3923,6 +3923,7 @@ MonoBehaviour:
   _speed: 2
   bulletVelocity: 10
   FireDelay: 1
+  GamePause: {fileID: 822712707}
   player: {fileID: 953660499}
   movespeed: 8
   bullet1: {fileID: 2335937234954417694, guid: c131427de2fce62429c98552f6e4118d, type: 3}

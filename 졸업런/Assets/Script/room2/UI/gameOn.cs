@@ -17,7 +17,7 @@ public class gameOn : MonoBehaviour
 
     public Image TimeBar;//타임바
     public Image ThesisBar;
-   
+  
 
     public Canvas GameOn;
     public Canvas GameFail;
@@ -55,6 +55,7 @@ public class gameOn : MonoBehaviour
                 Time.timeScale = 0;
                 Sound.Instance.StopSound("bgm");
                 Minimap.enabled = false;
+           
             }
         }
 
@@ -71,6 +72,7 @@ public class gameOn : MonoBehaviour
                 Time.timeScale = 0;
                 Sound.Instance.StopSound("bgm");
                 Minimap.enabled = false;
+               
             }
         }
 

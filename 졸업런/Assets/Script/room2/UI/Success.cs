@@ -8,6 +8,7 @@ public class Success : MonoBehaviour
 {
 
     public Canvas success_UI;
+  
 
     // Start is called before the first frame update
     void Start()

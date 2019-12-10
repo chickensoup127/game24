@@ -1,11 +1,18 @@
-﻿using System.Collections; using System.Collections.Generic; using UnityEngine;   public class AddBullet : MonoBehaviour {
+﻿using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI;   public class AddBullet : MonoBehaviour {
 
      
     public float _speed = 2.0f;     public float bulletVelocity=10f;
-    private bool FireState;     public float FireDelay;       
+    private bool FireState;     public float FireDelay;
+
+    
+    public Canvas GamePause;
+  
+
+
     private Camera mainCamera;     Rigidbody2D rigid;        public GameObject player;      public float movespeed = 1f;
     public GameObject bullet1;
     public GameObject Particle;
+
 
 
     // Use this for initialization
@@ -48,6 +55,21 @@
                 Sound.Instance.PlaySound("shoot");
 
             }
+
+            if (gameOn.thesis == 10)
+            {
+                FireState = false;
+            }
+
+            if (gameOn.distractionCurrent == 0)
+            {
+                FireState = false;
+            }
+
+            if(GamePause.enabled == true){
+                FireState = false;
+            }
+                
         }
 
         
