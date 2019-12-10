@@ -43,11 +43,16 @@ public class GameManager : MonoBehaviour
         DataManager.Instance.Success = false;
         DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
 
+
     }
 
     public void Next_Btu()
     {
         SceneManager.LoadScene("room2");
+        DataManager.Instance.score = 0;
+        DataManager.Instance.PlayerDie = false;
+        DataManager.Instance.Success = false;
+        DataManager.Instance.playTimeCurrent = DataManager.Instance.playTimeMax;
     }
     
 
