@@ -20,7 +20,7 @@ public class Succes_Video : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vp.time >= vp.clip.length)
+       /* if (vp.time >= vp.clip.length)
         {
             
                 vp.Stop();
@@ -28,6 +28,6 @@ public class Succes_Video : MonoBehaviour
                 //SceneManager.LoadScene("room2");
             
 
-        }
+        }*/
     }
 }
