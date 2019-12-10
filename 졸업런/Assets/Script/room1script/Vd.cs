@@ -9,6 +9,7 @@ public class Vd : MonoBehaviour
     public VideoPlayer vp;
     public GameObject obj;
     public Canvas Score;
+    
 
 
     private void Awake()
@@ -23,7 +24,7 @@ public class Vd : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (vp.time >= vp.clip.length || Input.GetKeyDown(KeyCode.Return))
+        if (/*vp.time >= vp.clip.length || */Input.GetKeyDown(KeyCode.Return))
         {
 
             vp.Stop();

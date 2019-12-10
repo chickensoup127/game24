@@ -15,9 +15,15 @@ public class GameManager : MonoBehaviour
 
     public GameObject SuccessPanel;//성공판넬 변수
 
+
+    void Start()
+    {
+        EndPanel.SetActive(false);
+        SuccessPanel.SetActive(false);
+    }
     public void Restart_Btu()
     {
-        SoundManager.Instance.PlaySound("BG");
+        SoundManager.Instance.StopSound("BG");
         DataManager.Instance.score = 0;
         DataManager.Instance.PlayerDie = false;
         DataManager.Instance.Success = false;
@@ -80,6 +86,7 @@ public class GameManager : MonoBehaviour
         if (DataManager.Instance.Success == true)//성공하면 성공판넬 켜기
         {
             SuccessPanel.SetActive(true);
+            EndPanel.SetActive(false);
             SoundManager.Instance.SoundAllMute();//모든소리 끄기
         }
         
